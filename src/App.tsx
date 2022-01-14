@@ -3,7 +3,7 @@ import logo from './logo.svg'
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [state, setStatus] = useState(false)
 
   return (
     <div className="App">
@@ -11,12 +11,12 @@ function App() {
         <img src={logo} className="App-logo" alt="logo" />
         <p>Hello Vite + React!</p>
         <p>
-          <button type="button" onClick={() => setCount((count) => count + 1)}>
-            count is: {count}
+          <button type="button" onClick={() => setStatus((state) => !state)}>
+            {state ? 'Жмякни сюда еще раз' : 'Жмякни сюда'}
           </button>
         </p>
         <p>
-          Edit <code>App.tsx</code> and save to test HMR updates.
+          {state ? 'Извиняюсь за задержку' : ''}
         </p>
         <p>
           <a
